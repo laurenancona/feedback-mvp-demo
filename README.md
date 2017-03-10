@@ -1,6 +1,6 @@
-# jekyll-uswds
+# Feedback MVP Demo Site
 
-This is a [Jekyll theme](https://jekyllrb.com/docs/themes/) for the
+This uses a [Jekyll theme](https://jekyllrb.com/docs/themes/) for the
 [U.S. Web Design Standards](https://standards.usa.gov).
 
 ## Table of contents

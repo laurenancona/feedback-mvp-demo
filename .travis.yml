@@ -1,0 +1,13 @@
+language: ruby
+rvm:
+- 2.1
+script: jekyll build ./_site
+deploy:
+  edge: true
+  provider: cloudfoundry
+  api: https://api.fr.cloud.gov
+  username: bfee97bb-daee-4685-94e6-8866022b8564
+  password:
+    secure: d6vvdyHAXidBqzOHm9+Be5x7PZNiEw/6OUiJthpnUnKDK4Eerqb/4Dq9ZtSbwzr9w9UFYMCewqp8XPUuNco9OtJXjP1S3zF1TffbgtwEmoUhk8HdGrznURVfpfnMqGzXbOwJDqTbewrXSXlXx2OGi3eV9vulbEAj6Zhz7ntccNaHjHO+6iU/9vUk2bq9uuyY0CuW5bhlqmsaUIcMvOEWCBGQ+u/6Q/XTRbIxmx+2K6g3qDUYQpBhAmf8gBSOHP5BV+y3XmWMPOwsA66t+VDAIsvo/JTtT+Nw/Yx+2X7vru3xnZF7V9Y5vKFn7dPZE5DKqlglx4BdqTrA7tZgDgMc/OEUQJaoBbLzfaIAQBDXLX9oxt4rLES5RKzL4z08fuDpRUB8wELItw4TREJqXJfXcDfuvmE7wIa+Rd0lCkkcti6MPN9TLLX686CxKlHdpz2HeRcX2169+T7cToiPtc82k7SGr05ZtF8/Wc/w5WQxwjFyT8LYjyiyR2QPcePWtz8lFn70j5NzoIYtmTiO3lVHbvPdjXg2BBHJiKc2NZpNLF8AMs8K8zqXtR/SUYPFMnaYmyiz3z4f+ziPWipCoPua1K7FZRSY78lm5l8e608HcvBNZpNHgEeRMJuHUeH32Uv2CX7vPe8l3jmn8GrDSYHmwhveHVZjEiIDM4MUsgRRktU=
+  organization: sandbox-gsa
+  space: lauren.ancona

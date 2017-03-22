@@ -5,26 +5,27 @@ This uses a [Jekyll theme](https://jekyllrb.com/docs/themes/) for the
 
 ## Table of contents
 1. [Installation](#installation)
-  1. [Development](#development)
-  1. [Versioning](#versioning)
+    1. [Development](#development)
+    1. [Versioning](#versioning)
 1. [Configuration](#configuration)
-  1. [Site title](#site-title)
-  1. [Navigation](#navigation)
-    1. [Page subnavigation](#page-subnavigation)
-  1. [Stylesheets](#stylesheets)
-  1. [Scripts](#scripts)
-  1. [Asset load order](#asset-load-order)
+    1. [Site title](#site-title)
+    1. [Navigation](#navigation)
+      1. [Page subnavigation](#page-subnavigation)
+1. [Assets](#assets)
+    1. [Stylesheets](#stylesheets)
+    1. [Scripts](#scripts)
+    1. [Asset load order](#asset-load-order)
 1. [Customization](#customization)
-  1. [Customizing with Sass](#customizing-with-sass)
-  1. [Customizing with CSS overrides](#customizing-with-css-overrides)
-  1. [Overriding includes and layouts](#overriding-includes-and-layouts)
+    1. [Customizing with Sass](#customizing-with-sass)
+    1. [Customizing with CSS overrides](#customizing-with-css-overrides)
+    1. [Overriding includes and layouts](#overriding-includes-and-layouts)
 1. [Components](#components)
-  1. [Header](#header)
-  1. [Footer](#footer)
+    1. [Header](#header)
+    1. [Footer](#footer)
 1. [Layouts](#layouts)
-  1. [Base](#layout-base)
-  1. [Docs](#layout-docs)
-  1. [Landing](#layout-landing)
+    1. [Base](#layout-base)
+    1. [Docs](#layout-docs)
+    1. [Landing](#layout-landing)
 
 
 ## Installation
@@ -186,6 +187,24 @@ redcarpet:
     - with_toc_data
 ```
 
+## Assets
+
+The [stylesheet](_includes/styles.html) and [script](_includes/scripts.html)
+includes each incorporate the Standards CSS and JS files if the corresponding
+`styles` and `scripts` lists aren't defined in your `_config.yml`. So unless
+you add one or both of those manually, your HTML will include the following:
+
+```html
+<!-- in the <head> -->
+<link rel="stylesheet" href="/assets/uswds/css/uswds.min.css" media="screen">
+<!-- before </body> -->
+<script src="/assets/uswds/js/uswds.min.js" async>
+```
+
+Read more about customizing [stylesheets](#stylesheets) and [scripts](#scripts)
+below.
+
+
 ### Stylesheets
 
 As a general rule, all stylesheets are inserted in a layouts'
@@ -220,7 +239,7 @@ scripts:
 
 Scripts specified as objects (in the latter item above) must have a `src`
 property. Scripts with `async: true` will get an `async` attribute, which tells
-the browser _not_ to let this script's laoding block the execution of
+the browser _not_ to let this script's loading block the execution of
 subsequent scripts. If the execution order of your scripts is **not**
 important, setting `async: true` may provide performance benefits to your
 users. (Conversely, if you don't know whether your scripts need to execute in a
@@ -258,7 +277,13 @@ and layouts.
     ---
     # assets/main.scss
     ---
-    // set your variables or @import them here
+    // set your variables or @import them here.
+    
+    // at the very least, you should set the USWDS font and image paths
+    // to the correct paths relative to assets/main.css, like so:
+    $font-path: 'uswds/fonts';
+    $image-path: 'uswds/img';
+    
     @import 'uswds/all';
     ```
 
